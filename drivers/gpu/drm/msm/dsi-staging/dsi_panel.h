@@ -304,6 +304,8 @@ struct dsi_panel {
 	bool oled_panel_video_mode;
 	int doze_lbm_brightness;
 	int doze_hbm_brightness;
+
+	int hbm_mode;
 };
 
 static inline bool dsi_panel_ulps_feature_enabled(struct dsi_panel *panel)
@@ -451,6 +453,7 @@ int dsi_panel_set_thermal_hbm_disabled(struct dsi_panel *panel,
 int dsi_panel_get_thermal_hbm_disabled(struct dsi_panel *panel,
 				bool *thermal_hbm_disabled);
 
+int dsi_panel_apply_hbm_mode(struct dsi_panel *panel);
 
 void dsi_panel_calc_dsi_transfer_time(struct dsi_host_common_cfg *config,
 		struct dsi_display_mode *mode, u32 frame_threshold_us);
