@@ -226,5 +226,3 @@ msm_drm-$(CONFIG_DEBUG_FS) += msm_debugfs.o
 
 obj-$(CONFIG_DRM_MSM)	+= msm_drm.o
 
-msm_drm-$(CONFIG_KLAPSE) += sde/klapse.o
-
