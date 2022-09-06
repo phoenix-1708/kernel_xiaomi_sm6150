@@ -1607,7 +1607,7 @@ static int dwc3_runtime_suspend(struct device *dev)
 	if (ret)
 		return ret;
 
-	device_init_wakeup(dev, true);
+	device_init_wakeup(dev, false);
 
 	return 0;
 }
