@@ -155,7 +155,6 @@ static irqreturn_t nqx_dev_irq_handler(int irq, void *dev_id)
 	return IRQ_HANDLED;
 }
 
-#if 0
 static int is_data_available_for_read(struct nqx_dev *nqx_dev)
 {
 	int ret;
@@ -166,7 +165,6 @@ static int is_data_available_for_read(struct nqx_dev *nqx_dev)
 		!nqx_dev->irq_enabled, msecs_to_jiffies(MAX_IRQ_WAIT_TIME));
 	return ret;
 }
-#endif
 
 static ssize_t nfc_read(struct file *filp, char __user *buf,
 					size_t count, loff_t *offset)
@@ -796,7 +794,6 @@ static const struct file_operations nfc_dev_fops = {
 #endif
 };
 
-#if 0
 /*
  * function: get_nfcc_hw_info()
  *
@@ -820,6 +817,7 @@ static int get_nfcc_hw_info(struct i2c_client *client,
 		struct nqx_dev *nqx_dev, char nci_reset_rsp_payload_len)
 {
 	int ret = 0;
+	return ret;
 
 	char *nci_init_cmd = NULL;
 	char *nci_init_rsp = NULL;
@@ -925,7 +923,6 @@ err_nfcc_hw_info:
 
 	return ret;
 }
-#endif
 
 /**
  * Do not need check availability of NFCC.
